@@ -5,6 +5,7 @@ import App from './App.vue'
 // Vue.component('app-car', Car)
 // Подключим компонент локально в App.vue
 
+export const eventEmitter = new Vue()
 
 new Vue({
   el: '#app',
@@ -13,5 +14,3 @@ new Vue({
   //   return h(App)
   // }
 })
-
-export const eventEmitter = new Vue()

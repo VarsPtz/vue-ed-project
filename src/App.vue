@@ -2,7 +2,7 @@
   <div>
     <h1>Parent: {{ carName }}</h1>
 
-    <app-counter :counter="counter"></app-counter>
+    <app-counter></app-counter>
 
     <!--carName - параметр   "carName" - значение параметра, строка
      для того, чтобы значение стало переменной, нужно её привязать
@@ -10,10 +10,9 @@
     <app-car
         :carName="carName"
         :carYear="carYear"
-        :counter="counter"
         :changeFunc="changeNameToAudi"
         @nameChanged="carName = $event"
-        @counterUpdated="counter = $event"
+
     ></app-car>
   </div>
 </template>
@@ -28,8 +27,7 @@ export default {
     return {
       // msg: 'Welcome to Your Vue.js App'
       carName: 'Ford',
-      carYear: 2018,
-      counter: 0
+      carYear: 2018
     }
   },
   methods: {
