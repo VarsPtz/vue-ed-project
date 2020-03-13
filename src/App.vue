@@ -8,6 +8,10 @@
 <!--      <li v-for="name of names">{{ name }}</li>-->
       <li v-for="name of filteredNames">{{ name }}</li>
     </ul>
+
+    <hr>
+
+    <app-list></app-list>
   </div>
 </template>
 
