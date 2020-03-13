@@ -17,27 +17,16 @@
 
 <script>
 
+import ListMixin from "./listMixin"
+
 export default {
+
   data() {
       return {
-        title: 'Hello I am Vue',
-        searchName: '',
-        names: [
-          'Vlad',
-          'Max',
-          'Elena',
-          'Igor'
-        ]
+        title: 'Hello I am Vue'
       }
   },
-  // https://ru.vuejs.org/v2/guide/computed.html вычисляемое свойство
-  computed: {
-    filteredNames() {
-      return this.names.filter(name => {
-        return name.toLowerCase().indexOf(this.searchName.toLowerCase()) !== -1
-      })
-    }
-  },
+  mixins: [ListMixin],
   filters: {
     lowercase(value) {
       return value.toLowerCase()

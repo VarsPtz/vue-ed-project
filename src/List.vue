@@ -10,26 +10,11 @@
 </template>
 
 <script>
-    export default {
-      data() {
-        return {
-          searchName: '',
-          names: [
-            'Vlad',
-            'Max',
-            'Elena',
-            'Igor'
-          ]
-        }
-      },
-      computed: {
-        filteredNames() {
-          return this.names.filter(name => {
-            return name.toLowerCase().indexOf(this.searchName.toLowerCase()) !== -1
-          })
-        }
-      },
-    }
+  import ListMixin from "./listMixin"
+
+  export default {
+    mixins: [ListMixin]
+   }
 </script>
 
 <style scoped>
