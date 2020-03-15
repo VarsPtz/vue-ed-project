@@ -1,41 +1,31 @@
 <template>
-  <div>
-    <h2>Form inputs</h2>
-
-    <app-onoff v-model="switchButton"></app-onoff>
-
-    <div>
-      <h3 v-if="switchButton">Component is enabled</h3>
-      <h3 v-else="switchButton">Component is disabled</h3>
-    </div>
+  <div class="container">
+    <form class="pt-3">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          v-model="email"
+        >
+      </div>
+    </form>
   </div>
 </template>
 
 <script>
-
-import Onoff from './Onoff.vue'
-
   export default {
 
     data() {
       return {
-        switchButton: false
+        email: ''
       }
-  },
-  components: {
-    appOnoff: Onoff
   }
 }
 
 </script>
 
 <style scoped>
-  textarea {
-    width: 400px;
-    height: 200px;
-  }
 
-  p {
-    white-space: pre;
-  }
 </style>
