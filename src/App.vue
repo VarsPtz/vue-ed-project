@@ -7,7 +7,7 @@
           type="email"
           id="email"
           class="form-control"
-          :class="{'is-invalid': $v.email.$error}"
+          :class="{'is-invalid': $v.email.$error, 'is-valid': !$v.email.$error && $v.email.$dirty}"
           @blur="$v.email.$touch()"
           v-model="email"
         >
