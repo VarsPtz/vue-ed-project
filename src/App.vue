@@ -76,7 +76,9 @@
         minLength: minLength(6)
       },
       confirmPassword: {
-        sameAs: sameAs('password')
+        sameAs: sameAs((vue) => {
+          return vue.password
+        })
       }
     }
 }
