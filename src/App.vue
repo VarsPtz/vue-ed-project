@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" @submit.prevent="onSubmit">
     <form class="pt-3">
       <div class="form-group">
         <label for="email">Email</label>
@@ -51,6 +51,11 @@
 <!--      <pre>-->
 <!--        {{ $v.email }}-->
 <!--      </pre>-->
+      <button
+        class="btn btn-success"
+        type="submit"
+        :disabled="$v.$invalid"
+      >Submit</button>
     </form>
   </div>
 </template>
@@ -67,6 +72,12 @@
         confirmPassword: ''
       }
     },
+    methods: {
+      onSubmit () {
+        console.log('Email', this.email)
+        console.log('Password', this.password)
+      }
+    },
     validations: {
       email: {
         required,
@@ -77,7 +88,7 @@
             setTimeout(() => {
               const value = newEmail !== 'test@mail.ru'
               resolve(value)
-            }, 3000)
+            }, 1000)
           })
         }
       },
