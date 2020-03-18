@@ -72,7 +72,13 @@
         required,
         email,
         uniqEmail: function (newEmail) {
-          return newEmail !== 'test@mail.ru'
+          if (newEmail === '') return true
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              const value = newEmail !== 'test@mail.ru'
+              resolve(value)
+            }, 3000)
+          })
         }
       },
       password: {
