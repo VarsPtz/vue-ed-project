@@ -13,6 +13,7 @@
         >
         <div class="invalid-feedback" v-if="!$v.email.required">Email field is required</div>
         <div class="invalid-feedback" v-if="!$v.email.email">This field should be an email</div>
+        <div class="invalid-feedback" v-if="!$v.email.uniqEmail">This email is already exists</div>
       </div>
 
       <div class="form-group">
@@ -68,9 +69,11 @@
     },
     validations: {
       email: {
-        // required: required - тоже что и required
         required,
-        email
+        email,
+        uniqEmail: function (newEmail) {
+          return newEmail !== 'test@mail.ru'
+        }
       },
       password: {
         minLength: minLength(6)
