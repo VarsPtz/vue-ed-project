@@ -3,14 +3,12 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <router-link></router-link>
-<!--            <a class="nav-link" href="/">Home</a>-->
-            <router-link class="nav-link" to="/">Home</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" :to="'/cars'">Cars</router-link>
-          </li>
+          <router-link tag="li" class="nav-item" to="/" exact active-class="active">
+            <a class="nav-link">Home</a>
+          </router-link>
+          <router-link tag="li" class="nav-item" to="/cars" active-class="active">
+            <a class="nav-link">Cars</a>
+          </router-link>
         </ul>
       </div>
     </nav>
