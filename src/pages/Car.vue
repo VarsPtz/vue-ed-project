@@ -7,7 +7,7 @@
     <router-link
       class="btn btn-info mb-2"
       tag="button"
-      :to="'/car/' + id + '/full'"
+      :to="{name: 'carFull', params: {id: id}}"
     >
       Full info
     </router-link>

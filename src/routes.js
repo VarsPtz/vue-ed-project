@@ -20,7 +20,8 @@ export default new VueRouter({
       children: [
         {
           path: 'full', // localhost:8080/car/10/full
-          component: CarFull
+          component: CarFull,
+          name: 'carFull'
         }
       ]
     }
