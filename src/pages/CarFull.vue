@@ -7,6 +7,8 @@
     <div class="scroll"></div>
 
     <h6 id="scroll">Hello from the bottom</h6>
+
+    <div class="scroll"></div>
   </div>
 
 </template>
