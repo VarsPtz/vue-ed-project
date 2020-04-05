@@ -26,11 +26,12 @@ export default new VueRouter({
           name: 'carFull',
           beforeEnter (to, from, next) {
             console.log('beforeEnter')
-            if (false) {
-              next(true)
-            } else  {
-              next(false)
-            }
+            // if (false) {
+            //   next(true)
+            // } else  {
+            //   next(false)
+            // }
+            next()
           }
         }
       ]

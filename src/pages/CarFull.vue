@@ -19,6 +19,10 @@
         cost () {
           return this.$route.query.cost
         }
+      },
+      beforeRouteEnter (to, from, next) {
+        console.log('beforeRouterEnter')
+        next(true)
       }
     }
 </script>
