@@ -1,9 +1,25 @@
 import VueRouter from 'vue-router'
 import Home from './pages/Home'
-import Cars from './pages/Cars'
-import Car from './pages/Car'
 import CarFull from './pages/CarFull'
 import ErrorCmp from "./pages/Error";
+
+const Cars = resolve => {
+  require.ensure(['./pages/Cars.vue'], () => {
+    resolve(
+      require('./pages/Cars')
+    )
+  })
+}
+
+const Car = resolve => {
+  require.ensure(['./pages/Car.vue'], () => {
+    resolve(
+      require('./pages/Car')
+    )
+  })
+}
+
+//About require.ensure - https://webpack.js.org/api/module-methods/
 
 export default new VueRouter({
   routes: [
