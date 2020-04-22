@@ -9,7 +9,7 @@ export default new Vuex.Store({
   },
   getters: {
     computedCounter (state) {
-      return state.counter * (7 -2 * (5 + 4))
+      return state.counter * 10
     }
   }
 
